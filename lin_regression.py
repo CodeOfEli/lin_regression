@@ -1,3 +1,6 @@
+# I am not able to get the summary to print
+
+
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -30,6 +33,18 @@ loansData['FICO.Range'] = cleanFicoRange
 # Create a New Column called FICO.Score: 
 new_column = loansData['FICO.Range'].map(lambda x: x.pop(0)) #How calc midpoint? 
 loansData['FICO.Score'] = new_column
+
+# Print out top 5 to make sure new column is there: 
+#print loansData['FICO.Score'].head()
+# 81174    735
+# 99592    715
+# 80059    690
+# 15825    695
+# 33182    695
+
+#print type(loansData['FICO.Score'].head().values[0]) 
+# <type 'numpy.int64'>
+
 
 
 # Set 3 Cleaned DataFrame Columns to variables: 
